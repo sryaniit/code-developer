@@ -28,17 +28,17 @@ public class LoginController {
 	UserDAOImpl udaoimpl;
 
 	// Mapping of login spring mvc login form with model class
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String submitLoginForm(@ModelAttribute("userobj") User userobj) {
+	@RequestMapping(value = "/reg", method = RequestMethod.GET)
+	public String submitregForm(@ModelAttribute("userobj") User userobj) {
 
 		//ModelAndView model = new ModelAndView("Login");
-		System.out.println("welcome to login");
-		return "Login";
+		System.out.println("welcome to get of register");
+		return "Register";
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView submitLoginForm(Model m) {
-		System.out.println("welcome");
+	@RequestMapping(value = "/reg", method = RequestMethod.POST)
+	public ModelAndView submitregForm(Model m) {
+		System.out.println("welcome to post of register");
 		ModelAndView model = new ModelAndView("Login", "userobj", new User());
 		return model;
 		// ModelAndView model=new ModelAndView("login");

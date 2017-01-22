@@ -8,10 +8,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class RegisterController {
 
-	@RequestMapping(value="/reg",method=RequestMethod.GET)
+	/*@RequestMapping(value="/reg",method=RequestMethod.GET)
 	public ModelAndView AddUser(){
 		
 		
 		return new ModelAndView("Register");
-	}
+	*/
 }

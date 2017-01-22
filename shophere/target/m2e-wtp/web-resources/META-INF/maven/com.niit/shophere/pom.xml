@@ -137,8 +137,5 @@
     <artifactId>commons-dbcp</artifactId>
     <version>1.4</version>
 </dependency>
-
-
-
   </dependencies>
   </project>

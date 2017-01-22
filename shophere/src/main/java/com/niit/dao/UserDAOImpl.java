@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.niit.model.Register;
 import com.niit.model.User;
 
 
@@ -18,12 +19,14 @@ public class UserDAOImpl implements UserDAO{
 
 	@Transactional
 	@Override
-	public void addUser(User userobj) {
+	public void addUser(Register userobj) {
 		
-		
+		System.out.println("user -----------"+userobj);
+
 		User uc=new User();
 		uc.setUsername(userobj.getUsername());
 		uc.setPassword(userobj.getPassword());
+		
 		
 		System.out.println("usercredential");
 		

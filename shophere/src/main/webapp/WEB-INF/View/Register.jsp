@@ -9,15 +9,21 @@
 <body>
 <div>
 <h4>Register Form</h4>
-<form action="reg">
-Name:<input type="text" placeholder="name" name="name" id=name required  /><br/>
-UserName:<input type="text" placeholder="Username" name="uname" id=uname required /> <br/>
-Password:<input type="password" placeholder="password" id="pwd" name="pwd" required /><br/>
-Mobile number:<input type="tel" placeholder="mobilenumber" id="mobno" name="mobno" required/><br/>
-Details: <input type="text" placeholder="Enter Details" id="details"  name="details" required/><br/>
+<form:form action="reg" commandName="userobj">
+<form:input path="name"></form:input>
+<form:label path="name">Name:</form:label>
+
+UserName:<form:input type="text" placeholder="Username" required="true" path="username" /> <br/>
+
+Password:<form:input type="password" placeholder="password" id="pwd" name="pwd" required="true" path="password" /><br/>
+
+Mobile number:<form:input type="tel" placeholder="mobilenumber" required="true" path="mobilenum"/><br/>
+
+Address : <form:input type="text" placeholder="Enter Address" required="true" path="address"/><br/>
+
 <input type="submit" value="register"></input>
 <a href="login">Already A USER!</a> 
-</form>
+</form:form>
 </div>
 </body>
 </html>
