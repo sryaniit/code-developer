@@ -6,15 +6,19 @@ import javax.persistence.Id;
 
 @Entity
 public class User {
+	
 	@Id
 	private String username;
 	
 	@Column
 	private String password;
+	
 	@Column
 	private Boolean enabled=true;
-    @Column
+    
+	@Column
 	private String role="Role_User";
+    
 	public String getUsername() {
 		return username;
 	}
@@ -38,6 +42,11 @@ public class User {
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	@Override
+	public String toString() {
+		return "User [username=" + username + ", password=" + password + ", enabled=" + enabled + ", role=" + role
+				+ "]";
 	}
 
 		

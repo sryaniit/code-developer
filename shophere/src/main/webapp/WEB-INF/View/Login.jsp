@@ -10,7 +10,7 @@
 </head>
 <body>
 <div align="center">
-<form:form method="post" action="login" commandName="userobj">
+<form:form method="post" action="log" commandName="userobj">
 			<h2>Please Sign In</h2>
 			<label for="inputEmail" class="sr-only">Username</label>
 			<form:input	placeholder="Username" path="username" required="autofocus"></form:input>
@@ -18,7 +18,7 @@
 			<label for="inputPassword" class="sr-only">Password</label>
 			<form:input type="password" path="password"	placeholder="Password" required="true"></form:input><br/><br/>
 			<button type="submit">LOG IN</button>
-			<blink><a  href="reg">Need to register!!!!</a></blink>
+			<a  href="reg">Need to register!!!!</a>
             </form:form>
             </div>
             </body>

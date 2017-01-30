@@ -1,5 +1,4 @@
 package com.niit.dao;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -19,25 +18,29 @@ public class UserDAOImpl implements UserDAO{
 
 	@Transactional
 	@Override
-	public void addUser(Register userobj) {
+	public void addUser(User userobj) {
 		
-		System.out.println("user -----------"+userobj);
+		System.out.println("user -----------" +userobj);
 
 		User uc=new User();
 		uc.setUsername(userobj.getUsername());
 		uc.setPassword(userobj.getPassword());
-		
-		
+		if((userobj.getUsername()==uc.getUsername())&& userobj.getPassword()==uc.getPassword())
+		{
+		System.out.println("Already logged in ");;	
+		}
+			
 		System.out.println("usercredential");
 		
 		Session session=sessionFactory.openSession();
 		Transaction tx =session.beginTransaction();
-		tx.begin();
-		session.save(userobj);
-		session.save(uc);
+		//tx.begin();
+		session.merge(userobj);
+		session.merge(uc);
 		tx.commit();
 		session.flush();
 		session.close();
+		System.out.println("Successfully logged in");
 	}
 
 }

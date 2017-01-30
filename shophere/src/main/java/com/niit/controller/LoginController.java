@@ -10,40 +10,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.dao.UserDAOImpl;
+import com.niit.model.Register;
 import com.niit.model.User;
 
 @Controller
 public class LoginController {
 
 
-/*	@RequestMapping(value="/link")
-	public ModelAndView getpage(){
-		
-		String msg="Mapping Success with JSP ";
-		return new ModelAndView("login","msg",msg);
-	}
-	
-	*/
 	@Autowired(required=true)
 	UserDAOImpl udaoimpl;
 
 	// Mapping of login spring mvc login form with model class
-	@RequestMapping(value = "/reg", method = RequestMethod.GET)
-	public String submitregForm(@ModelAttribute("userobj") User userobj) {
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView submitregForm(@ModelAttribute("userobj") User userobj) {
 
-		//ModelAndView model = new ModelAndView("Login");
-		System.out.println("welcome to get of register");
-		return "Register";
+		ModelAndView model = new ModelAndView("Login");
+		System.out.println("welcome to get of login");
+		return model;
+	
 	}
 
-	@RequestMapping(value = "/reg", method = RequestMethod.POST)
-	public ModelAndView submitregForm(Model m) {
+	@RequestMapping(value = "/log", method = RequestMethod.POST)
+	public ModelAndView saveUser(User userobj) {
 		System.out.println("welcome to post of register");
-		ModelAndView model = new ModelAndView("Login", "userobj", new User());
+		udaoimpl.addUser(userobj);
+		ModelAndView model = new ModelAndView("sucess", "userobj",new User());
 		return model;
-		// ModelAndView model=new ModelAndView("login");
-		// return model;
 	}
 	
-
 }
