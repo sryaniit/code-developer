@@ -25,11 +25,11 @@ public class UserDAOImpl implements UserDAO{
 		User uc=new User();
 		uc.setUsername(userobj.getUsername());
 		uc.setPassword(userobj.getPassword());
-		if((userobj.getUsername()==uc.getUsername())&& userobj.getPassword()==uc.getPassword())
+		/*if((userobj.getUsername()==uc.getUsername())&& userobj.getPassword()==uc.getPassword())
 		{
 		System.out.println("Already logged in ");;	
 		}
-			
+			*/
 		System.out.println("usercredential");
 		
 		Session session=sessionFactory.openSession();
@@ -40,7 +40,6 @@ public class UserDAOImpl implements UserDAO{
 		tx.commit();
 		session.flush();
 		session.close();
-		System.out.println("Successfully logged in");
 	}
 
 }

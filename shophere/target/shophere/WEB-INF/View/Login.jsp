@@ -13,7 +13,7 @@
 <form:form method="post" action="log" commandName="userobj">
 			<h2>Please Sign In</h2>
 			<label for="inputEmail" class="sr-only">Username</label>
-			<form:input	placeholder="Username" path="username" required="autofocus"></form:input>
+			<form:input	placeholder="Username" path="username" required="true"></form:input>
 			<br>
 			<label for="inputPassword" class="sr-only">Password</label>
 			<form:input type="password" path="password"	placeholder="Password" required="true"></form:input><br/><br/>

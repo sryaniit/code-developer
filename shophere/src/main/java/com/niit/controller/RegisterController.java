@@ -1,6 +1,9 @@
 package com.niit.controller;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,8 +38,11 @@ public class RegisterController {
 	public ModelAndView saveUser(Register userobj) {
 		System.out.println("welcome to post of register");
 		regdaoimpl.addUser(userobj);
+		
 		ModelAndView model = new ModelAndView("RegSucess", "userobj",new Register());
+		
 		return model;
 	}
 	
+
 }

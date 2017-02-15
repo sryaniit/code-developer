@@ -31,11 +31,24 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/log", method = RequestMethod.POST)
-	public ModelAndView saveUser(User userobj) {
-		System.out.println("welcome to post of register");
+	public String saveUser(Model model,@ModelAttribute("userobj")User userobj) {
+		System.out.println("welcome to post of login");
 		udaoimpl.addUser(userobj);
-		ModelAndView model = new ModelAndView("sucess", "userobj",new User());
-		return model;
+		 if (userobj != null && userobj.getUsername() != null & userobj.getPassword() != null) {
+	            if (userobj.getUsername().equals("surya") && userobj.getPassword().equals("srya123")) {
+	                model.addAttribute("msg", "welcome" + userobj.getUsername());
+	                return "sucess";
+	                
+	            } else {
+	                model.addAttribute("error", "Invalid Details");
+	                return "error";
+	            }
+	        } else {
+	            model.addAttribute("error", "Please enter Details");
+	            return "error";
+	        }
+			
+		}
 	}
 	
-}
+

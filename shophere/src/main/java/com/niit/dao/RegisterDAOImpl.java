@@ -1,5 +1,7 @@
 package com.niit.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -24,6 +26,7 @@ public void addUser(Register userobj) {
 		User uc = new User();
 		uc.setUsername(userobj.getUsername());
 		uc.setPassword(userobj.getPassword());
+		
 		
 		System.out.println("usercredential");
 		

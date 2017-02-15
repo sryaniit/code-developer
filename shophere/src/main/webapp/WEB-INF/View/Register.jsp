@@ -6,22 +6,49 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Register Form</title>
 </head>
+
 <body>
-<div>
+<div align="center">
+
+
 <h4>Register Form</h4>
+
 <form:form action="register" commandName="userobj" method="post">
-Name: <form:input type="text" path="name" />
 
-UserName:<form:input type="text" placeholder="Username" required="true" path="username" /> <br/>
+Name: <form:input type="text" path="name" required="true" placeholder="enter name" />
+<br/>
 
-Password:<form:input type="password" placeholder="password" required="true" path="password" /><br/>
+UserName:<form:input type="text" placeholder="Username" required="true" path="username" /> 
+<br/>
 
-Mobile number:<form:input type="text" placeholder="mobilenumber" required="true" path="mobilenum"/><br/>
+Password:<form:input type="password" placeholder="password" required="true" path="password" maxsize="15" />
+<br/>
 
-Address : <form:input type="text" placeholder="Enter Address" required="true" path="address"/><br/>
+Mobile number:<form:input type="tel" placeholder="mobileno" required="true" path="mobilenum" maxsize="10" value=""/>
+<br/>
+
+Email Address :<form:input type="email" placeholder="Enter Address" required="true" path="email"/>
+<br/>
+
+Department:  <form:select path="dept" required="true" >
+<form:option value="cse" label="cse"> </form:option>
+<form:option value="mech" label="mech"> </form:option>
+<form:option value="it" label="it"> </form:option>
+<form:option value="civil" label="civil"> </form:option>
+<form:option value="ece" label="ece"> </form:option>
+<form:option value="eee" label="eee"> </form:option>
+<form:option value="btech" label="btech"> </form:option>
+</form:select>
+<br/>
+
+College : <form:input type="text" path="college" placeholder="Enter college name" required="true" />
+<br/>
+<br/>
 
 <input type="submit" value="register"></input>
 <a href="login">Already A USER!</a> 
+<br/>
+
 </form:form>
 </div>
 </body>

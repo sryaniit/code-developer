@@ -1,5 +1,7 @@
 package com.niit.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,7 +23,8 @@ private String password;
 private long mobilenum;
 
 @Column
-private String address;
+private String email;
+
 
 public String getName() {
 	return name;
@@ -47,6 +50,14 @@ public void setPassword(String password) {
 	this.password = password;
 }
 
+public String getEmail() {
+	return email;
+}
+
+public void setEmail(String email) {
+	this.email = email;
+}
+
 public long getMobilenum() {
 	return mobilenum;
 }
@@ -54,14 +65,5 @@ public long getMobilenum() {
 public void setMobilenum(long mobilenum) {
 	this.mobilenum = mobilenum;
 }
-
-public String getAddress() {
-	return address;
-}
-
-public void setAddress(String address) {
-	this.address = address;
-}
-
 
 }
