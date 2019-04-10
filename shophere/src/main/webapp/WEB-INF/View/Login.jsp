@@ -19,6 +19,7 @@
 			<form:input type="password" path="password"	placeholder="Password" required="true"></form:input><br/><br/>
 			<button type="submit">LOG IN</button>
 			<a  href="reg">Need to register!!!!</a>
+			<!-- Need to register -->
             </form:form>
             </div>
             </body>
